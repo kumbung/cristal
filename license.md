@@ -3,7 +3,7 @@
 Copyright © 2018 - Cristian Gabriel Sosa.
 Este software es libre de usarse, estudiarse, modificarse, y hacer cualquier otro uso, ya sea comercial, o no. 
 
-## Términos y condiciones (Actualizados el 10 de Enero de 2019).
+## Términos y condiciones (Actualizados el 28 de marzo de 2019).
 ### 1. Los componentes de este paquete y las libertades de los mismos:
 
 En el paquete adquirido bajo esta licencia, se incluye software, y su respectiva documentación, así como misceláneos; 
