@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html>
+
+<html
+
+  b:version='2'
+  class='v2'
+  expr:dir='data:blog.languageDirection'
+  expr:lang='data:blog.locale'
+  prefix='og: http://ogp.me/ns#'
+  xmlns='http://www.w3.org/1999/xhtml'
+  xmlns:b='http://www.google.com/2005/gml/b'
+  xmlns:data='http://www.google.com/2005/gml/data'
+  xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+  <head>
+
+    <!-- Perfil -->
+    <link rel="profile" href="https://gmpg.org/xfn/11"/>
+
+    <!-- Charset. Normalmente no se requiere cambiar. -->
+    <meta charset='utf-8'/>
+
+    <!-- Etiquetas http-equiv -->
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/><![endif]-->
+
+    <!-- Viewport -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'/>
+
+    <!-- Twitter cards -->
+    <meta name='twitter:card' content='summary'/>
+
+    <!-- Url canonica. -->
+    <link rel='canonical' expr:href='data:blog.url'/>
+
+    <!-- Plitica de robots -->
+    <meta name='robots' content='index,follow'/>
+
+    <!-- Politica de distribución -->
+    <meta name='distribution' content='global'/>
+
+    <!-- OpenGraph misc. -->
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta property='og:url' expr:content='data:blog.url'/>
+    <meta property='og:site_name' expr:content='data:blog.title'/>
+
+    <b:if cond='data:view.isPost'>
+      <meta property='og:type' content='article'/>
+      <b:else/>
+        <meta property='og:type' content='website'/>
+      </b:if>
+
+    <meta name='twitter:site' content='@NOMBREDEUSUARIO'/>
+    <meta name='twitter:creator' content='@NOMBREDEUSUARIO'/>
+
+    <!-- Titulo -->
+    <title><data:blog.pageTitle/></title>
+    <meta name='twitter:title' expr:content='data:blog.pageTitle'/>
+    <meta property='og:title' expr:content='data:blog.pageTitle'/>
+
+    <!-- Descripción -->
+    <meta name='description' expr:content='data:blog.metaDescription'/>
+    <meta name='twitter:description' expr:content='data:blog.metaDescription'/>
+    <meta property='og:description' expr:content='data:blog.metaDescription'/>
+    <meta itemprop='description' expr:content='data:blog.metaDescription'/>
+
+    <!-- Imagen - Debes camiarla por la tuya -->
+    <meta property='og:image' expr:content='data:blog.blogspotFaviconUrl'/>
+    <meta property='og:image:secure_url' expr:content='data:blog.blogspotFaviconUrl'/>
+    <meta name='twitter:image' expr:content='data:blog.blogspotFaviconUrl'/>
+    <meta itemprop='image' expr:content='data:blog.blogspotFaviconUrl'/>
+
+    <!-- Links de feeds -->
+    <data:blog.feedLinks/>
+
+    <!-- Search Action.
+    Se aconseja eliminar esto y usar RDFa -->
+    <script type='application/ld+json'>
+      {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "<data:blog.homepageUrl/>",
+      "potentialAction": {
+      "@type": "SearchAction",
+      "target": "<data:blog.searchUrl/>?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+      }
+      }
+</script>
+
+    <b:skin>
+      <![CDATA[
+        body {
+        }
+
+        header {
+
+        }
+
+        footer {
+
+        }
+
+        /* El media Query, permite modificar atributos CSS,
+        dependiendo del viewport.
+        Aprox. se estimó 1030px como un standard pc/tablet/smartphone
+        Se puede cambiar, y/o añadir otros. */
+
+        @media only screen and (max-width: 1030px) {
+
+        body {
+
+        }
+
+        header {
+
+        }
+
+        footer {
+
+        }
+
+        }]]>
+      </b:skin>
+
+  </head>
+
+  <body>
+
+    <b:section class='header' id='header' showaddelement='yes'>
+
+    </b:section>
+
+    <b:section class='body' id='body' showaddelement='yes'>
+      <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog'>
+
+        <!-- Mensajes de error. Debes personalizarlos -->
+
+        <!-- Generico -->
+        <b:includable id='status-message'>
+          <b:if cond='data:navMessage'>
+            <div class='msggenriknv'>
+            </div>
+        </b:if>
+
+        <!-- Mensaje cuando no hay posts -->
+        <b:if cond='data:numPosts == 0'>
+          <!-- Tu mensaje -->
+        </b:if>
+
+        <!-- Error 404 -->
+          <b:if cond='data:view.isError'>
+            <!-- Tu mensaje -->
+          </b:if>
+
+          <!-- Mensaje de búsqueda -->
+          <b:if cond='data:view.isSearch'>
+            <!-- Tu mensaje -->
+          </b:if>
+
+          <!-- Si no hay resultados de búsqueda -->
+          <b:if cond='data:view.isSearch'>
+            <b:if cond='data:numPosts == 0'>
+              <!-- Tu mensaje -->
+            </b:if>
+          </b:if>
+        </b:includable>
+      </b:widget>
+    </b:section>
+
+    <b:section class='footer' id='footer' showaddelement='yes'>
+    </b:section>
+
+  </body>
+
+</html>
